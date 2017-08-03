@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c_bg_f2gray">
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:id="@+id/ll_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/tv_logo"
+            android:layout_width="160px"
+            android:layout_height="160px"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="40px"
+            android:layout_marginTop="40px" />
+
+        <View
+            style="@style/c_line_horizontal" />
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="88px"
+            android:background="@color/c_bg_white"
+            android:gravity="center_vertical"
+            android:paddingLeft="30px">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="140px"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:gravity="left|center"
+                android:text="@string/c_mobilephone_num"
+                android:textColor="@color/c_text_92gray"
+                android:textSize="30px"/>
+
+            <AutoCompleteTextView
+                android:id="@+id/aet_phone"
+                android:layout_width="400px"
+                android:layout_height="match_parent"
+                android:layout_alignTop="@+id/textView"
+                android:layout_marginRight="22px"
+                android:layout_toEndOf="@+id/textView"
+                android:layout_toRightOf="@+id/textView"
+                android:background="@null"
+                android:hint="@string/c_hint_input_phone"
+                android:imeOptions="actionNext"
+                android:inputType="phone"
+                android:maxLength="20"
+                android:popupBackground="@color/c_bg_white"
+                android:textColor="@color/c_text_22black"
+                android:textColorHint="@color/c_text_92gray"
+                android:textSize="30px"/>
+
+            <TextView
+                android:id="@+id/btn_dropdown"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:clickable="true"
+                android:drawableRight="@drawable/c_icon_down"
+                android:paddingBottom="29px"
+                android:paddingLeft="30px"
+                android:paddingRight="30px"
+                android:paddingTop="37px"/>
+
+
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+        <View
+            android:id="@+id/v_line_horizontal"
+            style="@style/c_line_horizontal"
+            android:layout_marginLeft="30px" />
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="88px"
+            android:background="@color/c_bg_white"
+            android:gravity="center"
+            android:paddingLeft="30px">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="140px"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="@string/c_password"
+                android:textColor="@color/c_text_92gray"
+                android:textSize="30px"/>
+
+            <ImageView
+                android:id="@+id/password_isvisible"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:paddingBottom="29px"
+                android:paddingLeft="30px"
+                android:paddingRight="22px"
+                android:paddingTop="37px"
+                android:src="@drawable/c_password_hide"/>
+
+            <EditText
+                android:id="@+id/password_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/textView2"
+                android:layout_toLeftOf="@id/password_isvisible"
+                android:layout_toRightOf="@+id/textView2"
+                android:background="@null"
+                android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                android:hint="请输入密码"
+                android:password="true"
+                android:singleLine="true"
+                android:textColor="@color/c_text_22black"
+                android:textColorHint="@color/c_text_92gray"
+                android:textSize="28px"/>
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+        <View
+            style="@style/c_line_horizontal" />
+
+        <TextView
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="86px"
+            android:layout_marginLeft="35px"
+            android:layout_marginRight="35px"
+            android:layout_marginTop="60px"
+            android:background="@drawable/c_button_selector"
+            android:clickable="true"
+            android:gravity="center"
+            android:text="@string/c_login"
+            android:textColor="@drawable/c_tx_color_selector"
+            android:textSize="36px"/>
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="88px">
+
+            <TextView
+                android:id="@+id/forget_pw_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="64px"
+                android:layout_marginStart="64px"
+                android:paddingTop="32px"
+                android:text="@string/c_forget_password"
+                android:textColor="@color/c_text_92gray"
+                android:textSize="26px"/>
+
+            <TextView
+                android:id="@+id/newuser_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginEnd="62px"
+                android:layout_marginRight="69px"
+                android:paddingTop="16dp"
+                android:text="@string/c_newuser_regist"
+                android:textColor="@color/c_text_92gray"
+                android:textSize="26px"/>
+
+        </com.zhy.autolayout.AutoRelativeLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
+
+
+</com.zhy.autolayout.AutoRelativeLayout>

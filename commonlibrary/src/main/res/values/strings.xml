@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">CommonLibrary</string>
+    <!--登录-->
+    <string name="c_login">登录</string>
+    <string name="c_password">密码</string>
+    <string name="c_forget_password">忘记密码?</string>
+    <string name="c_newuser_regist">新用户注册</string>
+    <string name="c_newone">下一步</string>
+    <string name="c_newpassword">新密码</string>
+    <string name="c_resure_password">确认密码</string>
+    <string name="c_resure">确定</string>
+    <string name="c_login_rightnow">立即登录</string>
+    <!--注册-->
+    <string name="c_regist">注册</string>
+    <string name="c_regist_rightnow">立即注册</string>
+    <string name="c_mobilephone_num">手机号</string>
+    <string name="c_hint_input_phone">请输入手机号码</string>
+    <string name="c_security_code">验证码</string>
+    <string name="c_tel_security_code">手机验证码</string>
+    <string name="c_hint_security_code">请输入手机验证码</string>
+    <string name="c_get_security_code">获取验证码</string>
+    <string name="c_app_agreement">《健康城市用户使用协议》</string>
+    <string name="c_warn_read_agreement">请阅读并同意签约协议</string>
+    <string name="c_warn_regist_success">注册成功</string>
+</resources>

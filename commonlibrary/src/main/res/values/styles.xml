@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="c_line">
+        <item name="android:background">@color/c_line_degray</item>
+    </style>
+
+    <!--横线-->
+    <style name="c_line_horizontal" parent="c_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+    </style>
+
+    <!--竖线-->
+    <style name="c_line_vertical" parent="c_line">
+        <item name="android:layout_width">1px</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+</resources>
