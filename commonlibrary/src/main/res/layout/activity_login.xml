@@ -99,7 +99,7 @@
                 android:textSize="30px"/>
 
             <ImageView
-                android:id="@+id/password_isvisible"
+                android:id="@+id/btn_pw_isvisible"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_alignParentEnd="true"
@@ -108,14 +108,14 @@
                 android:paddingLeft="30px"
                 android:paddingRight="22px"
                 android:paddingTop="37px"
-                android:src="@drawable/c_password_hide"/>
+                android:src="@drawable/c_icon_pw_hide"/>
 
             <EditText
-                android:id="@+id/password_tv"
+                android:id="@+id/tv_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@+id/textView2"
-                android:layout_toLeftOf="@id/password_isvisible"
+                android:layout_toLeftOf="@id/btn_pw_isvisible"
                 android:layout_toRightOf="@+id/textView2"
                 android:background="@null"
                 android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
