@@ -33,6 +33,7 @@ public class RegisterActivity extends CommonBaseRxMvpActivity<UserPresenter> imp
     public void initView() {
         mao= SPUtils.getAll(this, SType.LOGIN_USERNAME);
         autoCompleteTextView.setThreshold(1);
+        autoCompleteTextView.setTag(R.drawable.c_blue_white_selector);
         Map.Entry<?, ?> entry = (Map.Entry<?, ?>) autoCompleteAdapter.getItem(0);
     }
 

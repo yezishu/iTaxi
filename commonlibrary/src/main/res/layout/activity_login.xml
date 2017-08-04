@@ -111,7 +111,7 @@
                 android:src="@drawable/c_icon_pw_hide"/>
 
             <EditText
-                android:id="@+id/tv_password"
+                android:id="@+id/ev_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignTop="@+id/textView2"

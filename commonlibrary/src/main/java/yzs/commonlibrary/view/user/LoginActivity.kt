@@ -8,9 +8,11 @@ import com.alibaba.android.arouter.facade.annotation.Route
 import kotlinx.android.synthetic.main.activity_login.*
 import yzs.commonlibrary.R
 import yzs.commonlibrary.base.CommonBaseRxMvpActivity
+import yzs.commonlibrary.base.config.TokenConfig
 import yzs.commonlibrary.base.constant.SType
 import yzs.commonlibrary.presenter.user.LoginPresenter
 import yzs.commonlibrary.util.SPUtils
+import yzs.commonlibrary.util.ToastUtil
 import java.util.Map
 
 /**
@@ -64,7 +66,7 @@ class LoginActivity : CommonBaseRxMvpActivity<LoginPresenter>(), ILoginView, Vie
     override fun onClick(v: View) {
         when (v.id) {
             R.id.btn_dropdown -> lookHistoryUserName()
-            R.id.btn_login -> mPresenter.login(this, aet_phone.text.toString(), "")
+            R.id.btn_login -> mPresenter.login(this, aet_phone.text.toString(), ev_password!!.text.toString())
             R.id.btn_pw_isvisible-> switchPwVisible()
             else -> {
             }
@@ -73,10 +75,10 @@ class LoginActivity : CommonBaseRxMvpActivity<LoginPresenter>(), ILoginView, Vie
 
     fun switchPwVisible(){
         if(btn_pw_isvisible!!.tag==R.drawable.c_icon_pw_hide){
-            tv_password.transformationMethod=HideReturnsTransformationMethod.getInstance()
+            ev_password.transformationMethod=HideReturnsTransformationMethod.getInstance()
             setPwStatus(R.drawable.c_icon_pw_show)
         }else{
-            tv_password.transformationMethod=PasswordTransformationMethod.getInstance()
+            ev_password.transformationMethod=PasswordTransformationMethod.getInstance()
             setPwStatus(R.drawable.c_icon_pw_hide)
         }
     }
@@ -84,7 +86,7 @@ class LoginActivity : CommonBaseRxMvpActivity<LoginPresenter>(), ILoginView, Vie
     fun setPwStatus(id: Int ){
         btn_pw_isvisible.setImageResource(id)
         btn_pw_isvisible!!.tag=id
-        tv_password.setSelection(tv_password.length())
+        ev_password.setSelection(ev_password.length())
     }
 
     fun lookHistoryUserName() {
@@ -99,6 +101,7 @@ class LoginActivity : CommonBaseRxMvpActivity<LoginPresenter>(), ILoginView, Vie
     override fun loginSuccess() {
         userNameAdapter!!.setShowData(SPUtils.getAll(this, SType.LOGIN_USERNAME))
         userNameAdapter!!.notifyDataSetChanged()
+        ToastUtil.showMessage("token : "+TokenConfig.getToken())
     }
 
 }
