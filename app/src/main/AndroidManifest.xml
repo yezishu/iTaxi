@@ -4,6 +4,18 @@
 
     <!-- 允许程序打开网络sockets(必选配置) -->
     <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- 挂断手机的权限 -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!-- 接电话的权限 -->
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
+    <!-- 读取手机状态的权限 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 解锁的权限 -->
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <!-- 亮屏的权限 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- 读取网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".BaseApplication"
@@ -22,6 +34,13 @@
             android:name="design_height"
             android:value="1334"/>
 
+        <!-- 注册监听手机状态 -->
+        <receiver android:name=".view.icall.PhoneStateReceiver" >
+            <intent-filter android:priority="1000" >
+                <action android:name="android.intent.action.PHONE_STATE" />
+            </intent-filter>
+        </receiver>
+
         <activity android:name=".view.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -30,6 +49,11 @@
             </intent-filter>
         </activity>
 
+        <!-- 拦截来电界面 -->
+        <activity
+            android:name=".view.icall.ICallActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"/>
     </application>
 
 </manifest>
