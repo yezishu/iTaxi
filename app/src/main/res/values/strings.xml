@@ -12,5 +12,6 @@
     <string name="a_end_location_hint">去选择目的地</string>
     <string name="a_start_time">出发时间</string>
     <string name="a_number">人数</string>
+    <string name="a_number_title">选择人数</string>
 
 </resources>

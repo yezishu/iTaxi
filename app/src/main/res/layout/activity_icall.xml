@@ -188,7 +188,6 @@
             android:layout_toRightOf="@+id/tv_number_hint"
             android:ellipsize="end"
             android:gravity="center_vertical"
-            android:hint="@string/a_end_location_hint"
             android:lines="1"
             android:textColor="@color/c_text_22black"/>
     </com.zhy.autolayout.AutoRelativeLayout>
