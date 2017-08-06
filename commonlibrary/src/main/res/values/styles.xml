@@ -15,4 +15,45 @@
         <item name="android:layout_width">1px</item>
         <item name="android:layout_height">match_parent</item>
     </style>
+
+
+    <style name="c_ActionSheetDialogStyle" parent="android:Theme.Dialog">
+
+        <!-- 背景透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 浮于Activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!-- 边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- Dialog以外的区域模糊效果 -->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- Dialog进入及退出动画 -->
+        <item name="android:windowAnimationStyle">@style/c_ActionSheetDialogAnimation</item>
+    </style>
+    <!-- ActionSheet进出动画 -->
+    <style name="c_ActionSheetDialogAnimation" parent="@android:style/Animation.Dialog">
+        <item name="android:windowEnterAnimation">@anim/c_actionsheet_dialog_in</item>
+        <item name="android:windowExitAnimation">@anim/c_actionsheet_dialog_out</item>
+    </style>
+    <!-- 头部字体样式 -->
+    <style name="c_ETitle" parent="@android:style/Widget.Button">
+        <item name="android:textColor">@color/c_actionsheet_blue</item>
+        <item name="android:textSize">@dimen/c_ts_22</item>
+    </style>
+
+    <style name="c_AlertDialogStyle" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
 </resources>

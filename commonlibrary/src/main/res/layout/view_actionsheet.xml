@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16px">
+
+    <TextView
+        android:id="@+id/txt_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/c_actionsheet_top_normal"
+        android:gravity="center"
+        android:minHeight="90px"
+        android:paddingBottom="20px"
+        android:paddingLeft="30px"
+        android:paddingRight="30px"
+        android:paddingTop="20px"
+        android:textColor="@color/c_actionsheet_gray"
+        android:textSize="@dimen/c_ts_26"
+        android:visibility="gone"/>
+
+    <ScrollView
+        android:id="@+id/sLayout_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fadingEdge="none">
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:id="@+id/lLayout_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        </com.zhy.autolayout.AutoLinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/txt_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="90px"
+        android:layout_marginTop="16px"
+        android:background="@drawable/c_actionsheet_single_selector"
+        android:gravity="center"
+        android:text="取消"
+        android:textColor="@color/c_actionsheet_blue"
+        android:textSize="@dimen/c_ts_36"/>
+
+</com.zhy.autolayout.AutoLinearLayout>
