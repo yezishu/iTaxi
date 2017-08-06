@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">ITaxi</string>
+
+    <!--电话拦截-->
+    <string name="a_end_call">拒接</string>
+    <string name="a_answer">接通</string>
+    <string name="a_hf">免提</string>
+    <string name="a_switch">切换</string>
+    <string name="a_start_location">出发地</string>
+    <string name="a_start_location_hint">去选择出发地</string>
+    <string name="a_end_location">目的地</string>
+    <string name="a_end_location_hint">去选择目的地</string>
+    <string name="a_start_time">出发时间</string>
+    <string name="a_number">人数</string>
+
 </resources>

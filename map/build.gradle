@@ -4,6 +4,10 @@ if (IsBuildModule.toBoolean()) {
 } else {
     apply plugin: 'com.android.library'
 }
+
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion Integer.parseInt(COMPILE_SDK_VERSION)
     buildToolsVersion BUILDTOOLS_VERSION
@@ -25,6 +29,13 @@ android {
     }
 }
 
+kapt {
+    generateStubs = true
+    arguments {
+        arg("moduleName", project.getName())
+    }
+}
+
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -34,4 +45,5 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
     compile project(':commonlibrary')
+    kapt "com.alibaba:arouter-compiler:${AROUTER_COMPILER_VERSION}"
 }

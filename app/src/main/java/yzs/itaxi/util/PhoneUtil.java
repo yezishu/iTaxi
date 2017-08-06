@@ -10,7 +10,6 @@ import com.android.internal.telephony.ITelephony;
 
 import java.lang.reflect.Method;
 
-import yzs.itaxi.view.icall.ICallActivity;
 
 /**
  * Des：
@@ -24,9 +23,9 @@ public class PhoneUtil {
      * @param ctx 上下文对象
      */
     public static void sendEndCallBroadCast(Context ctx) {
-        Intent i = new Intent();
-        i.setAction(ICallActivity.ACTION_END_CALL);
-        ctx.sendBroadcast(i);
+//        Intent i = new Intent();
+//        i.setAction(ICallActivity.Companion.getACTION_END_CALL());
+//        ctx.sendBroadcast(i);
     }
 
     /**

@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
 
 import butterknife.BindView;
@@ -18,7 +17,6 @@ import yzs.itaxi.data.module.NewsResponse;
 import yzs.itaxi.presenter.MainPresenter;
 import yzs.map.MapIndexActivity;
 
-@Route(path = "/app/main")
 public class MainActivity extends BaseActivity<MainPresenter> implements MainContract.View {
 
     @BindView(R.id.tv)
@@ -42,7 +40,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         initCreate();
-        ARouter.getInstance().build("/commonlibrary/loginactivity").navigation();
+        ARouter.getInstance().build("/app_/ICallActivity").navigation();
     }
 
     @Override

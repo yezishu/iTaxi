@@ -70,7 +70,7 @@ public class PhoneStateReceiver extends BroadcastReceiver {
     private void showActivity(Context ctx, String number) {
         Intent intent = new Intent(ctx, ICallActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        intent.putExtra(ICallActivity.EXTRA_PHONE_NUM, number);
+        intent.putExtra(ICallActivity.Companion.getEXTRA_PHONE_NUM(), number);
         ctx.startActivity(intent);
     }
 

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--文字型号-->
+    <dimen name="c_ts_12">12px</dimen>
+    <dimen name="c_ts_14">14px</dimen>
+    <dimen name="c_ts_16">16px</dimen>
+    <dimen name="c_ts_18">18px</dimen>
+    <dimen name="c_ts_20">20px</dimen>
+    <dimen name="c_ts_22">22px</dimen>
+    <dimen name="c_ts_24">24px</dimen>
+    <dimen name="c_ts_26">26px</dimen>
+    <dimen name="c_ts_28">28px</dimen>
+    <dimen name="c_ts_30">30px</dimen>
+    <dimen name="c_ts_32">32px</dimen>
+    <dimen name="c_ts_34">34px</dimen>
+    <dimen name="c_ts_36">36px</dimen>
+</resources>
