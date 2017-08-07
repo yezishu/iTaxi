@@ -23,4 +23,6 @@
     <string name="c_warn_read_agreement">请阅读并同意签约协议</string>
     <string name="c_warn_regist_success">注册成功</string>
 
+    <string name="c_permission_error">权限获取失败,部分功能会因此受限</string>
+
 </resources>
