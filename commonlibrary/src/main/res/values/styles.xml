@@ -1,7 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="c_line">
         <item name="android:background">@color/c_line_degray</item>
+    </style>
+
+    <!--标题文本-->
+    <style name="C_textAppearance.title" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+    <!--标题文本反转色-->
+    <style name="C_textAppearance.title.Inverse" parent="TextAppearance.AppCompat.Title">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <!--子标题文本-->
+    <style name="C_textAppearance.subhead" parent="TextAppearance.AppCompat.Subhead">
+    </style>
+    <!--子标题文本反转色-->
+    <style name="C_textAppearance.subhead.Inverse" parent="TextAppearance.AppCompat.Subhead">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <!--文本内容-->
+    <style name="C_textAppearance.body" parent="TextAppearance.AppCompat.Body1">
+    </style>
+    <!--内容文本反转色-->
+    <style name="C_textAppearance.body.Inverse" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+    <!--备注说明文本-->
+    <style name="C_textAppearance.caption" parent="TextAppearance.AppCompat.Caption">
+    </style>
+    <!--备注说明文本反转色-->
+    <style name="C_textAppearance.caption.Inverse" parent="TextAppearance.AppCompat.Caption">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="c_rv_item">
+        <item name="android:layout_marginTop">10px</item>
+        <item name="android:layout_marginBottom">10px</item>
+        <item name="android:layout_marginLeft">30px</item>
+        <item name="android:layout_marginRight">30px</item>
     </style>
 
     <!--横线-->

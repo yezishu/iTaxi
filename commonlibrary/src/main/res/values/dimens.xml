@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!--toolbar 的阴影-->
+    <dimen name="c_elevation_header">4dp</dimen>
+    <dimen name="c_rv_radius">2dp</dimen>
+    <!--fab型号-->
+    <dimen name="c_size_fab">56dp</dimen>
+
     <!--文字型号-->
     <dimen name="c_ts_12">12px</dimen>
     <dimen name="c_ts_14">14px</dimen>
