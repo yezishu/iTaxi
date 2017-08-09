@@ -61,7 +61,7 @@
             android:windowSoftInputMode="adjustPan|stateAlwaysHidden"/>
         <!-- 通话记录界面 -->
         <activity
-            android:name=".view.calllog.CallLogActivity"
+            android:name=".view.icall.CallLogActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustPan|stateAlwaysHidden"/>
     </application>

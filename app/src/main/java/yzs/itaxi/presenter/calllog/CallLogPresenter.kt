@@ -8,7 +8,7 @@ import yzs.commonlibrary.base.BaseRxPresenter
 import yzs.commonlibrary.thridparty.rxpermission.PhonePermissionUtil
 import yzs.commonlibrary.util.DateUtil
 import yzs.itaxi.data.module.CallLogItem
-import yzs.itaxi.view.calllog.ICallLogView
+import yzs.itaxi.view.icall.ICallLogView
 import java.util.*
 
 /**

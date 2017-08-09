@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yzs.commonlibrary.thridparty.autolayout.AutoCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/c_rv_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/c_bg_white"
+    app:cardCornerRadius="@dimen/c_rv_radius">
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20px">
+
+        <TextView
+            android:id="@+id/tv_num"
+            style="@style/C_textAppearance.subhead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="186215555555"/>
+
+        <TextView
+            android:id="@+id/tv_time"
+            style="@style/C_textAppearance.caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_num"
+            android:layout_marginTop="10px"
+            tools:text="2017-12-12 11:00"/>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+
+</yzs.commonlibrary.thridparty.autolayout.AutoCardView>
