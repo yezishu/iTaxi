@@ -59,7 +59,6 @@ dependencies {
     //KOTLIN
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:${KOTLIN_VERSION}"
 
-
     compile "com.squareup.retrofit2:retrofit:${RETROFIT_VERSION}"
     compile "com.squareup.retrofit2:adapter-rxjava2:${RETROFIT_VERSION}"
     compile "com.squareup.retrofit2:converter-scalars:${RETROFIT_VERSION}"
@@ -83,7 +82,8 @@ dependencies {
     kapt "com.alibaba:arouter-compiler:${AROUTER_COMPILER_VERSION}"
     // RX PERMISSION
     compile "com.tbruyelle.rxpermissions2:rxpermissions:${RXPERMISSION_VERSION}"
-
+    // material date time picker 时间日期 https://github.com/wdullaer/MaterialDateTimePicker
+    compile "com.wdullaer:materialdatetimepicker:${DTP_VERSION}"
 }
 repositories {
     mavenCentral()
