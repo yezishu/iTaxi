@@ -6,7 +6,8 @@ import android.content.Context
 import android.provider.CallLog
 import yzs.commonlibrary.base.BaseRxPresenter
 import yzs.commonlibrary.thridparty.rxpermission.PhonePermissionUtil
-import yzs.commonlibrary.util.DateUtil
+import yzs.commonlibrary.util.dateutil.DateUtil
+import yzs.commonlibrary.util.StringUtils
 import yzs.itaxi.data.module.CallLogItem
 import yzs.itaxi.view.icall.ICallLogView
 import java.util.*
@@ -44,7 +45,7 @@ class CallLogPresenter(private val mContent: Context, view: ICallLogView) : Base
         cs.moveToFirst()
         while(!cs.isAfterLast&&i<30){
             var item=CallLogItem()
-            item.name=cs.getString(0)
+            item.name=StringUtils.setTextWithCheckNull(cs.getString(0))
             item.num=cs.getString(1)
             when(cs.getInt(2)){
                 CallLog.Calls.INCOMING_TYPE-> item.type=CallLogItem.TYPE_INCOMING
@@ -52,7 +53,7 @@ class CallLogPresenter(private val mContent: Context, view: ICallLogView) : Base
                 CallLog.Calls.MISSED_TYPE-> item.type=CallLogItem.TYPE_MISSED
                 else->item.type=CallLogItem.TYPE_UNDEFINE
             }
-            item.date=DateUtil.SIMPLE_DATE_FORMAT.format(Date(cs.getLong(3)))
+            item.date= DateUtil.SIMPLE_DATE_FORMAT.format(Date(cs.getLong(3)))
             item.duration=cs.getLong(4)
             callLogItems.add(item)
             i++

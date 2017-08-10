@@ -7,9 +7,12 @@ import android.widget.TextView
 import com.alibaba.android.arouter.facade.annotation.Route
 import kotlinx.android.synthetic.main.activity_icall.*
 import yzs.commonlibrary.base.CommonBaseRxMvpActivity
+import yzs.commonlibrary.util.dateutil.DateUtil
+import yzs.commonlibrary.widget.CustomDateTimePickerDialog
 import yzs.commonlibrary.widget.actionsheetdialog.ActionSheetDialog
 import yzs.itaxi.R
 import yzs.itaxi.util.PhoneUtil
+import java.util.*
 
 /**
  * Des：拦截来电界面
@@ -20,6 +23,7 @@ class ICallActivity : CommonBaseRxMvpActivity<ICallPresenter>(), IICallView, Vie
 
     var numberPicker: ActionSheetDialog? = null
     internal var number = 1
+    var cdpd: CustomDateTimePickerDialog? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +34,8 @@ class ICallActivity : CommonBaseRxMvpActivity<ICallPresenter>(), IICallView, Vie
     override fun initView() {
         setNumber(this.number)
         (findViewById(R.id.tv_phone) as TextView).text = intent.getStringExtra(EXTRA_PHONE_NUM)
+        tv_date.setText(DateUtil.getDate(Calendar.getInstance().time))
+        tv_time.setText(DateUtil.getTimeNoS(Calendar.getInstance().time))
     }
 
     override fun initData() {
@@ -39,11 +45,13 @@ class ICallActivity : CommonBaseRxMvpActivity<ICallPresenter>(), IICallView, Vie
         tv_number.setOnClickListener(this)
         btn_end_call.setOnClickListener(this)
         btn_answer_call.setOnClickListener(this)
+        tv_time.setOnClickListener(this)
+        tv_date.setOnClickListener(this)
         btn_hf.setOnClickListener {
-            if(PhoneUtil.switchAudio(this)){
-                btn_hf.setBackgroundColor(ContextCompat.getColor(this,R.color.colorPrimaryDark))
-            }else{
-                btn_hf.setBackgroundColor(ContextCompat.getColor(this,R.color.c_bg_99gray))
+            if (PhoneUtil.switchAudio(this)) {
+                btn_hf.setBackgroundColor(ContextCompat.getColor(this, R.color.colorPrimaryDark))
+            } else {
+                btn_hf.setBackgroundColor(ContextCompat.getColor(this, R.color.c_bg_99gray))
             }
         }
     }
@@ -57,6 +65,8 @@ class ICallActivity : CommonBaseRxMvpActivity<ICallPresenter>(), IICallView, Vie
             R.id.tv_number -> showNumberPicker()
             R.id.btn_end_call -> PhoneUtil.endCall(this)
             R.id.btn_answer_call -> PhoneUtil.answerCall(this)
+            R.id.tv_time -> showDtpd()
+            R.id.tv_date -> showDateP()
             else -> {
             }
         }
@@ -64,6 +74,26 @@ class ICallActivity : CommonBaseRxMvpActivity<ICallPresenter>(), IICallView, Vie
 
     override fun showFailInfo(errorInfo: String) {
 
+    }
+
+    fun showDateP() {
+        initDtpd()
+        cdpd!!.showDatePicker()
+    }
+
+    fun showDtpd() {
+        initDtpd()
+        cdpd!!.showTimePicker()
+    }
+
+    fun initDtpd() {
+        if (cdpd == null) {
+            cdpd = CustomDateTimePickerDialog.DateTimePDCreator(this)
+                    .setTimeTv(tv_time)
+                    .setDateTv(tv_date)
+                    .setFutureTime(true)
+                    .create()
+        }
     }
 
     fun showNumberPicker() {

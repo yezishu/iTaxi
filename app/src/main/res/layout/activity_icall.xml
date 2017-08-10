@@ -151,15 +151,26 @@
             android:textSize="@dimen/a_ts_34"/>
 
         <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="100px"
+            android:layout_marginLeft="30px"
+            android:layout_toRightOf="@+id/tv_time_hint"
+            android:height="100px"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:lines="1"
+            android:textColor="@color/c_text_22black"/>
+
+        <TextView
             android:id="@+id/tv_time"
             android:layout_width="match_parent"
             android:layout_height="100px"
             android:layout_marginLeft="30px"
             android:layout_marginRight="30px"
-            android:layout_toRightOf="@+id/tv_time_hint"
+            android:layout_toRightOf="@+id/tv_date"
             android:ellipsize="end"
             android:gravity="center_vertical"
-            android:hint="@string/a_start_location_hint"
             android:lines="1"
             android:textColor="@color/c_text_22black"/>
 
