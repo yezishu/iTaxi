@@ -2,7 +2,7 @@
     <string name="app_name">ITaxi</string>
 
     <!--电话拦截-->
-    <string name="a_end_call">拒接</string>
+    <string name="a_end_call">挂断</string>
     <string name="a_answer_call">接通</string>
     <string name="a_hf">免提</string>
     <string name="a_switch">切换</string>

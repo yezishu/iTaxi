@@ -32,7 +32,8 @@
             android:layout_marginRight="40px"
             android:background="@color/colorPrimary"
             android:text="@string/a_answer_call"
-            android:textColor="@color/c_bg_white"/>
+            android:textColor="@color/c_bg_white"
+            android:visibility="gone"/>
 
         <Button
             android:id="@+id/btn_end_call"

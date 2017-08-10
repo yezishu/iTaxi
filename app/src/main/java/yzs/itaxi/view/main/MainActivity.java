@@ -1,6 +1,5 @@
 package yzs.itaxi.view.main;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -15,7 +14,6 @@ import yzs.itaxi.R;
 import yzs.itaxi.base.BaseActivity;
 import yzs.itaxi.data.module.NewsResponse;
 import yzs.itaxi.presenter.MainPresenter;
-import yzs.map.MapIndexActivity;
 
 public class MainActivity extends BaseActivity<MainPresenter> implements MainContract.View {
 
@@ -70,9 +68,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
 
     @Override
     public void showData(String data) {
-        tv.setText(data);
-        Intent intent = new Intent(this, MapIndexActivity.class);
-        startActivity(intent);
+
     }
 
     @Override
