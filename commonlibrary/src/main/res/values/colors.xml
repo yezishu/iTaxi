@@ -8,6 +8,7 @@
 
     <color name="c_bg_f2gray">#F2F2F2</color>
     <color name="c_bg_f1gray">#F1F1F1</color><!--浅灰-->
+    <color name="c_bg_99gray">#999999</color>
     <color name="c_bg_white">#FFFFFF</color><!--浅灰-->
 
     <color name="c_text_92gray">#929292</color><!--灰色字体颜色-->

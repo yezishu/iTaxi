@@ -47,7 +47,7 @@
             android:id="@+id/btn_hf"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimaryDark"
+            android:background="@color/c_bg_99gray"
             android:text="@string/a_hf"
             android:textColor="@color/c_bg_white"/>
 
