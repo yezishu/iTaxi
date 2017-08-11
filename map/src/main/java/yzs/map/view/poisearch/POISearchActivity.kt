@@ -1,9 +1,10 @@
-package yzs.map.poisearch
+package yzs.map.view.poisearch
 
 import android.os.Bundle
 
 import yzs.commonlibrary.base.CommonBaseRxMvpActivity
 import yzs.map.R
+import yzs.map.presenter.POISearchPresenter
 
 /**
  * Des：请输入标题

@@ -21,10 +21,43 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
+
+    sourceSets {
+        main {
+            if (IsBuildModule.toBoolean()) {
+                manifest.srcFile 'src/main/debug/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/release/AndroidManifest.xml'
+                java {
+                    exclude 'debug/**'
+                }
+            }
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    if (IsBuildModule.toBoolean()) {
+        //签名配置
+        signingConfigs {
+            debug {
+                storeFile file("$rootDir/ITaxiKeyStore.jks")
+                storePassword '@Key2352207'
+                keyAlias 'ITaxiKeyStore'
+                keyPassword '@Key2352207'
+            }
+
+            release {
+                storeFile file("$rootDir/ITaxiKeyStore.jks")
+                storePassword '@Key2352207'
+                keyAlias 'ITaxiKeyStore'
+                keyPassword '@Key2352207'
+            }
         }
     }
 }
