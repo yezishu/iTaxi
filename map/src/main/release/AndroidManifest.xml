@@ -47,11 +47,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <!-- 请输入标题 -->
-        <activity
-            android:name=".view.poisearch.POISearchActivity"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan|stateAlwaysHidden"/>
+
         <!-- 请输入标题 -->
         <activity
             android:name=".view.amap.AMapActivity"

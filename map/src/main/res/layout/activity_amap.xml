@@ -1,4 +1,4 @@
-<RelativeLayout
+<com.zhy.autolayout.AutoRelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,9 +9,10 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_alignParentTop="true"
-        android:background="#140909"/>
+        android:background="@color/colorPrimary"/>
 
-    <FrameLayout
+
+    <com.zhy.autolayout.AutoFrameLayout
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -36,6 +37,7 @@
             android:text="获取中……"
             android:textColor="@android:color/secondary_text_light"
             android:textSize="15sp"
+            android:background="@color/colorPrimary"
             android:visibility="invisible"/>
 
         <TextView
@@ -47,12 +49,31 @@
             android:gravity="center"
             android:padding="15dp"
             android:text="输入目的地"
+            android:background="@color/colorPrimary"
             android:textColor="@android:color/white"
             android:textSize="16sp"
             android:visibility="invisible"/>
 
+        <com.zhy.autolayout.AutoLinearLayout
+            android:id="@+id/ll_location_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="bottom"
+            android:background="@color/colorPrimary">
+
+            <TextView
+                android:id="@+id/tv_start_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="30px"
+                style="@style/C_textAppearance.subhead"
+                android:hint="@string/m_start_location_hint"/>
+
+        </com.zhy.autolayout.AutoLinearLayout>
+
         <ImageView
-            android:id="@+id/myLocation"
+            android:id="@+id/btn_my_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="right|bottom"
@@ -60,6 +81,13 @@
             android:layout_marginRight="5dp"
             android:src="@drawable/m_btn_location"/>
 
-    </FrameLayout>
+    </com.zhy.autolayout.AutoFrameLayout>
 
-</RelativeLayout>
+    <com.zhy.autolayout.AutoFrameLayout
+        android:id="@+id/fl_geo_search"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:layout_height="match_parent"
+        android:visibility="gone"/>
+
+</com.zhy.autolayout.AutoRelativeLayout>
