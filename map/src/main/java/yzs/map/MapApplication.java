@@ -25,7 +25,6 @@ public class MapApplication extends Application {
      * 加载 分组件编译时候需要加载的配置
      */
     private void initBuildModuleConfig() {
-        AllUtilConfig.applicationContext = this;
         AllUtilConfig.DES_Key = "sfasfsdf";
         AllUtilConfig.LogSwitch = BuildConfig.DEBUG;
 

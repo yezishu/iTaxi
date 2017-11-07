@@ -5,6 +5,8 @@ import io.reactivex.subscribers.ResourceSubscriber;
 import yzs.commonlibrary.util.AllUtilConfig;
 import yzs.commonlibrary.util.LogUtil;
 
+import static yzs.commonlibrary.base.constant.Net.CONNECT_FAIL_MSG;
+
 /**
  * Des：rx 使用retrofit 网络请求   请求回调
  * creat by Zishu.Ye on 2017/1/10  14:13
@@ -24,7 +26,7 @@ public abstract class NetWorkSubscriber<T> extends ResourceSubscriber<T> {
         if(e instanceof ApiException){
             showErrorInfo(e.getMessage());
         }else {
-            showErrorInfo(ApiException.ERROR_DEFAULT);
+            showErrorInfo(CONNECT_FAIL_MSG);
         }
         if(AllUtilConfig.LogSwitch){
             LogUtil.e(e.getMessage(), e);

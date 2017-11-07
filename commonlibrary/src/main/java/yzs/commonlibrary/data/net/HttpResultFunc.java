@@ -2,8 +2,12 @@ package yzs.commonlibrary.data.net;
 
 import io.reactivex.annotations.NonNull;
 import io.reactivex.functions.Function;
-import yzs.commonlibrary.base.constant.SState;
 import yzs.commonlibrary.util.ToastUtil;
+
+import static yzs.commonlibrary.base.constant.Net.RESPONSE_FAIL_CODE;
+import static yzs.commonlibrary.base.constant.Net.RESPONSE_SUCCESS_CODE;
+import static yzs.commonlibrary.base.constant.Net.RESPONSE_TOKEN_INVALID_MSG;
+import static yzs.commonlibrary.base.constant.Net.RESPONSE_TOKEN_INVALID_OTHER;
 
 /**
  * 接口返回结果处理
@@ -12,23 +16,6 @@ import yzs.commonlibrary.util.ToastUtil;
  */
 public class HttpResultFunc<T> implements Function<HttpResult<T>, T> {
 
-    /**
-     * 状态码
-     */
-    public static final String RESPONSE_SUCCESS_CODE = "0";//成功
-    public static final String RESPONSE_FAIL_CODE = "1";//失败
-    public static final String RESPONSE_UNKNOWN_FAIL_CODE = "9999";//未知异常
-    public static final String SEND_CHAT_MSG_FAIL = "30112";// 会话失效
-    public static final String RESPONSE_TEAM_NO_EXIST = "20303";// 团队不存在
-    public static final String RESPONSE_TEAM_DONE_AGREE = "50118";// 团队已审核-同意
-    public static final String RESPONSE_TEAM_DONE_REFUSE = "50117";// 团队已审核-拒绝
-
-    /**
-     * 提示信息
-     */
-    public static final String CONNECT_FAIL_MSG = "连接请求出现问题，请您检查网络是否连接。";
-    public static final String RESPONSE_FAIL_MSG = "请求服务器出现问题，请稍后再试。";
-    public static final String RESPONSE_TOKEN_INVALID_MSG = "用户信息过期";
 
     @Override
     public T apply(@NonNull HttpResult<T> httpResult) throws Exception {
@@ -49,13 +36,7 @@ public class HttpResultFunc<T> implements Function<HttpResult<T>, T> {
         switch (code) {
             case RESPONSE_FAIL_CODE://处理失败
                 break;
-            case RESPONSE_UNKNOWN_FAIL_CODE://未知异常
-                message = RESPONSE_FAIL_MSG;
-                break;
-            case SEND_CHAT_MSG_FAIL://会话失效
-                break;
-            case SState.RESPONSE_TOKEN_INVALID: // token失效
-            case SState.RESPONSE_TOKEN_INVALID_OTHER: //Token失效，异地登录
+            case RESPONSE_TOKEN_INVALID_OTHER: //Token失效，异地登录
                 ToastUtil.showMessage(RESPONSE_TOKEN_INVALID_MSG);
                 tokenInvalid();
                 break;

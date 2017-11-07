@@ -20,7 +20,6 @@ public class BaseApplication extends Application{
     }
 
     private void initConfig() {
-        AllUtilConfig.applicationContext = this;
         AllUtilConfig.DES_Key = "sfasfsdf";
         AllUtilConfig.LogSwitch = BuildConfig.DEBUG;
 

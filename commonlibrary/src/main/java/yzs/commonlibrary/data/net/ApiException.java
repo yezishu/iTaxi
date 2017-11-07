@@ -5,11 +5,6 @@ package yzs.commonlibrary.data.net;
  * by Andy.Wu on 2016/7/4.
  */
 public class ApiException extends RuntimeException{
-    public static final String ERROR_DATA = "数据错误";
-    public static final String ERROR_INVOKE = "操作失败";
-    public static final String ERROR_GET = "获取数据失败";
-    public static final String ERROR_SAVE = "保存失败";
-    public static final String ERROR_DEFAULT = "请求错误";
     private String errorCode;
 
     public ApiException() {

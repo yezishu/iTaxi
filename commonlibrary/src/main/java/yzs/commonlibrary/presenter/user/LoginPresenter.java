@@ -2,7 +2,6 @@ package yzs.commonlibrary.presenter.user;
 
 import android.content.Context;
 
-import yzs.commonlibrary.base.config.TokenConfig;
 import yzs.commonlibrary.view.user.ILoginView;
 
 /**
@@ -16,8 +15,6 @@ public class LoginPresenter extends UserPresenter<ILoginView> {
     }
 
     public void login(Context context, String userName, String passWord){
-        dataLogon(context,userName);
-        TokenConfig.saveToken(passWord);
-        mView.loginSuccess();
+        register(userName,passWord,"");
     }
 }

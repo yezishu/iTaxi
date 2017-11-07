@@ -36,14 +36,14 @@ public class RegisterModel {
          * driverid : 402881e45f8c74ee015f8c75846d0000
          */
 
-        private Object telno;
+        private String telno;
         private String driverid;
 
-        public Object getTelno() {
+        public String getTelno() {
             return telno;
         }
 
-        public void setTelno(Object telno) {
+        public void setTelno(String telno) {
             this.telno = telno;
         }
 

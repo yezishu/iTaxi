@@ -6,6 +6,4 @@ package yzs.commonlibrary.view.user;
  */
 public interface ILoginView extends IUserView {
 
-    void loginSuccess();
-
 }

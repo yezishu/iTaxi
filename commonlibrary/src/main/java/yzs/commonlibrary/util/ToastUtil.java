@@ -6,6 +6,8 @@ import android.os.Looper;
 import android.util.Log;
 import android.widget.Toast;
 
+import yzs.commonlibrary.base.config.App;
+
 
 /**
  * Toast工具类
@@ -51,7 +53,7 @@ public class ToastUtil {
                         toast.setText(msg);
                         toast.setDuration(len);
                     } else {
-                        toast = Toast.makeText(AllUtilConfig.applicationContext, msg, len);
+                        toast = Toast.makeText(App.INSTANCE, msg, len);
                     }
                     toast.show();
                 }
@@ -75,7 +77,7 @@ public class ToastUtil {
                         toast.setText(msg);
                         toast.setDuration(len);
                     } else {
-                        toast = Toast.makeText(AllUtilConfig.applicationContext, msg, len);
+                        toast = Toast.makeText(App.INSTANCE, msg, len);
                     }
                     toast.show();
                 }

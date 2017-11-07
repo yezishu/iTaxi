@@ -5,10 +5,10 @@ import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.view.View
 import com.alibaba.android.arouter.facade.annotation.Route
+import com.alibaba.android.arouter.launcher.ARouter
 import kotlinx.android.synthetic.main.activity_login.*
 import yzs.commonlibrary.R
 import yzs.commonlibrary.base.CommonBaseRxMvpActivity
-import yzs.commonlibrary.base.config.TokenConfig
 import yzs.commonlibrary.base.constant.SType
 import yzs.commonlibrary.presenter.user.LoginPresenter
 import yzs.commonlibrary.util.SPUtils
@@ -19,7 +19,7 @@ import java.util.Map
  * Des：登陆界面
  * create by Zishu.Ye on 2017/8/3  9:02
  */
-@Route(path = "/commonlibrary/loginactivity")
+@Route(path = "/commonlibrary/user/LoginActivity")
 class LoginActivity : CommonBaseRxMvpActivity<LoginPresenter>(), ILoginView, View.OnClickListener {
 
     var isOpen = false
@@ -47,6 +47,7 @@ class LoginActivity : CommonBaseRxMvpActivity<LoginPresenter>(), ILoginView, Vie
         btn_login.setOnClickListener(this)
         btn_dropdown.setOnClickListener(this)
         btn_pw_isvisible.setOnClickListener(this)
+        newuser_tv.setOnClickListener (this)
         aet_phone.setOnItemClickListener { parent, view, position, id ->
             var entry = userNameAdapter!!.getItem(position) as Map.Entry<*, *>
             var key = entry.key as String
@@ -60,7 +61,7 @@ class LoginActivity : CommonBaseRxMvpActivity<LoginPresenter>(), ILoginView, Vie
     }
 
     override fun showFailInfo(errorInfo: String) {
-
+        ToastUtil.showMessage(errorInfo)
     }
 
     override fun onClick(v: View) {
@@ -68,6 +69,7 @@ class LoginActivity : CommonBaseRxMvpActivity<LoginPresenter>(), ILoginView, Vie
             R.id.btn_dropdown -> lookHistoryUserName()
             R.id.btn_login -> mPresenter.login(this, aet_phone.text.toString(), ev_password!!.text.toString())
             R.id.btn_pw_isvisible-> switchPwVisible()
+            R.id.newuser_tv-> ARouter.getInstance().build("/commonlibrary/user/RegisterActivity").navigation()
             else -> {
             }
         }
@@ -98,11 +100,10 @@ class LoginActivity : CommonBaseRxMvpActivity<LoginPresenter>(), ILoginView, Vie
         }
     }
 
-    override fun loginSuccess() {
+    override fun showRegister(info: String) {
         userNameAdapter!!.setShowData(SPUtils.getAll(this, SType.LOGIN_USERNAME))
         userNameAdapter!!.notifyDataSetChanged()
-        ToastUtil.showMessage("token : "+TokenConfig.getToken())
+        ToastUtil.showMessage("登录成功")
     }
-
 }
 

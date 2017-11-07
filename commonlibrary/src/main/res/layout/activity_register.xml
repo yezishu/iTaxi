@@ -2,12 +2,15 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/c_bg_white"
     android:orientation="vertical">
 
     <yzs.commonlibrary.widget.TitleView
         android:id="@+id/titleView"
         android:layout_width="match_parent"
+        app:tv_title="注册"
+        app:tv_back_view="true"
         android:layout_height="@dimen/c_title_height"/>
 
     <com.zhy.autolayout.AutoRelativeLayout
@@ -95,7 +98,7 @@
             android:layout_height="match_parent"
             android:layout_toRightOf="@id/label2"
             android:drawableRight="@drawable/icon_delete"
-            android:hint="输入手机号码"
+            android:hint="输入推荐码"
             android:inputType="phone"
             android:maxLength="20"
             android:textColor="@color/c_text_22black"

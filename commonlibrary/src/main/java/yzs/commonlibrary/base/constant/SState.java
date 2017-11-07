@@ -33,13 +33,5 @@ public class SState {
     public static final String QUESTION_TAKE_AWAY = "你都不快些,我都被抢走啦";
 
 
-    /**
-     * 状态码
-     */
-    public static final String RESPONSE_SUCCESS_CODE = "0";//成功
-    public static final String RESPONSE_FAIL_CODE = "1";//失败
-    public static final String RESPONSE_UNKNOWN_FAIL_CODE = "9999";//未知异常
-    public static final String RESPONSE_TOKEN_INVALID = "20104";// token失效
-    public static final String RESPONSE_TOKEN_INVALID_OTHER = "10105";// token失效
-    public static final String SEND_CHAT_MSG_FAIL = "30112";// 会话失效
+
 }

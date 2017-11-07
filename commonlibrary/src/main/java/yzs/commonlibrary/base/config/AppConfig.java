@@ -11,4 +11,6 @@ public class AppConfig {
      */
     public final static String SP_FILE_NAME = "config";//基础配置·SP存储文件名
     public final static String SP_KEY_TOKEN = "token"; // token
+    public final static String SP_USER_ID = "userId"; // userId
+    public final static String SP_KEY_USER_TELEPHONE = "userTelephone"; // 用户手机号
 }

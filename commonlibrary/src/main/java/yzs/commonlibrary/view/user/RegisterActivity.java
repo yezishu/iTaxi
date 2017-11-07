@@ -11,7 +11,6 @@ import org.jetbrains.annotations.NotNull;
 
 import yzs.commonlibrary.R;
 import yzs.commonlibrary.base.CommonBaseRxMvpActivity;
-import yzs.commonlibrary.data.model.RegisterModel;
 import yzs.commonlibrary.presenter.user.UserPresenter;
 import yzs.commonlibrary.util.StringUtils;
 import yzs.commonlibrary.util.ToastUtil;
@@ -57,7 +56,9 @@ public class RegisterActivity extends CommonBaseRxMvpActivity<UserPresenter> imp
                 String tjNo = et_tjNo.getText().toString().trim();
                 if (isUnLegal(phone, pw, tjNo)) {
                     ToastUtil.showMessage("输入参数不合法请检查");
+                    return;
                 }
+                mPresenter.register(phone,pw,tjNo);
             }
         });
     }
@@ -66,7 +67,7 @@ public class RegisterActivity extends CommonBaseRxMvpActivity<UserPresenter> imp
         if (StringUtils.isEmpty(phone, pw, tjNo))
             return true;
 
-        if (StringUtils.isLegalPhoneNum(phone))
+        if (!StringUtils.isLegalPhoneNum(phone))
             return true;
         return false;
     }
@@ -78,7 +79,7 @@ public class RegisterActivity extends CommonBaseRxMvpActivity<UserPresenter> imp
 
     @Override
     public void showFailInfo(String errorInfo) {
-
+        ToastUtil.showMessage(errorInfo);
     }
 
     @Override
@@ -89,7 +90,7 @@ public class RegisterActivity extends CommonBaseRxMvpActivity<UserPresenter> imp
     }
 
     @Override
-    public void showRegister(@NotNull RegisterModel model) {
-
+    public void showRegister(@NotNull String info) {
+        ToastUtil.showMessage("注册成功");
     }
 }

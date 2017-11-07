@@ -1,5 +1,8 @@
 package yzs.commonlibrary.base;
 
+import yzs.commonlibrary.util.StringUtils;
+import yzs.commonlibrary.util.ToastUtil;
+
 /**
  * Des：mvp框架 使用的base activity
  *      处理了presenter 订阅以及取消订阅
@@ -34,5 +37,14 @@ public abstract class CommonBaseRxMvpActivity<P extends BasePresenter> extends C
     @Override
     public void init() {
         initPresenter();
+    }
+
+    /**
+     * @param msg 展示网络请求错误
+     */
+    public void showFailInfo(String msg) {
+        if (!StringUtils.isEmpty(msg)) {
+            ToastUtil.showMessage(msg);
+        }
     }
 }
