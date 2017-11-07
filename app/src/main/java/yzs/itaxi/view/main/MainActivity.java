@@ -38,7 +38,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         initCreate();
-        ARouter.getInstance().build("/app_/ICallActivity").navigation();
+        ARouter.getInstance().build("/commonlibrary/user/RegisterActivity").navigation();
     }
 
     @Override

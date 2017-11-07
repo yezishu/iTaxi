@@ -19,11 +19,12 @@ public class MapIndexActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_map_index);;
+        setContentView(R.layout.activity_map_index);
+        ;
         ARouter.getInstance().build("/_map/AMapActivity").navigation();
     }
 
-    public   String sHA1(Context context) {
+    public String sHA1(Context context) {
         try {
             PackageInfo info = context.getPackageManager().getPackageInfo(
                     context.getPackageName(), PackageManager.GET_SIGNATURES);
@@ -40,7 +41,7 @@ public class MapIndexActivity extends AppCompatActivity {
                 hexString.append(":");
             }
             String result = hexString.toString();
-            return result.substring(0, result.length()-1);
+            return result.substring(0, result.length() - 1);
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         } catch (NoSuchAlgorithmException e) {

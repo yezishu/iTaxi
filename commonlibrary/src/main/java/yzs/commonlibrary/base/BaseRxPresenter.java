@@ -1,7 +1,11 @@
 package yzs.commonlibrary.base;
 
+import io.reactivex.Flowable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
+import yzs.commonlibrary.data.net.NetWorkSubscriber;
 
 /**
  * Des：扩展google mvp框架产生出来的P基类
@@ -39,6 +43,13 @@ public class BaseRxPresenter<V extends BaseView> implements BasePresenter {
             mDisposables = new CompositeDisposable();
         }
         mDisposables.add(disposable);
+    }
+
+    public <T> void addDisposable(Flowable<T> flowable, NetWorkSubscriber<T> subscriber) {
+        addDisposable(flowable.subscribeOn(Schedulers.io())
+                .unsubscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeWith(subscriber));
     }
 
 }

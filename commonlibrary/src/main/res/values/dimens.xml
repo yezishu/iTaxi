@@ -6,6 +6,7 @@
     <dimen name="c_rv_radius">2dp</dimen>
     <!--fab型号-->
     <dimen name="c_size_fab">56dp</dimen>
+    <dimen name="c_title_height">88px</dimen>
 
     <!--文字型号-->
     <dimen name="c_ts_12">12px</dimen>

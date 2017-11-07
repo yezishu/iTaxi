@@ -1,0 +1,124 @@
+<com.zhy.autolayout.AutoLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c_bg_white"
+    android:orientation="vertical">
+
+    <yzs.commonlibrary.widget.TitleView
+        android:id="@+id/titleView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/c_title_height"/>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="88px"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px"
+        android:layout_marginTop="30px">
+
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="160px"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="手机号码："
+            android:textColor="@color/c_text_22black"
+            android:textSize="28px"/>
+        @
+
+        <yzs.commonlibrary.widget.DeletableAutoCEditText
+            android:id="@+id/et_telephone"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@id/label"
+            android:drawableRight="@drawable/icon_delete"
+            android:hint="输入手机号码"
+            android:inputType="phone"
+            android:maxLength="20"
+            android:textColor="@color/c_text_22black"
+            android:textColorHint="@color/c_text_66gray"
+            android:textSize="28px"/>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="88px"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px"
+        android:layout_marginTop="30px">
+
+        <TextView
+            android:id="@+id/label1"
+            android:layout_width="160px"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="密码："
+            android:textColor="@color/c_text_22black"
+            android:textSize="28px"/>
+
+        <yzs.commonlibrary.widget.DeletableAutoCEditText
+            android:id="@+id/et_pw"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@id/label1"
+            android:drawableRight="@drawable/icon_delete"
+            android:hint="输入密码"
+            android:inputType="phone"
+            android:maxLength="20"
+            android:textColor="@color/c_text_22black"
+            android:textColorHint="@color/c_text_66gray"
+            android:textSize="28px"/>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="88px"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px"
+        android:layout_marginTop="30px">
+
+        <TextView
+            android:id="@+id/label2"
+            android:layout_width="160px"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="推荐码："
+            android:textColor="@color/c_text_22black"
+            android:textSize="28px"/>
+
+        <yzs.commonlibrary.widget.DeletableAutoCEditText
+            android:id="@+id/et_tjNo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@id/label2"
+            android:drawableRight="@drawable/icon_delete"
+            android:hint="输入手机号码"
+            android:inputType="phone"
+            android:maxLength="20"
+            android:textColor="@color/c_text_22black"
+            android:textColorHint="@color/c_text_66gray"
+            android:textSize="28px"/>
+
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
+        android:layout_height="88px"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px"
+        android:layout_marginTop="40px"
+        android:background="@drawable/blue_corners_selector"
+        android:gravity="center"
+        android:text="注册"
+        android:textColor="@drawable/tx_color_selector_login"
+        android:textSize="36px"/>
+
+
+</com.zhy.autolayout.AutoLinearLayout>

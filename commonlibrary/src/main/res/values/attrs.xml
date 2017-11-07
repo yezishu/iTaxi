@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--通用标题栏-->
+    <declare-styleable name="TitleView">
+        <attr name="tv_title" format="string" />
+        <attr name="tv_back_view" format="boolean" />
+        <attr name="tv_right_btn" format="enum">
+            <enum name="tv_text_btn" value="0" />
+            <enum name="tv_img_btn" value="1" />
+        </attr>
+        <attr name="tv_text_btn_str" format="string"/>
+        <attr name="tv_img_btn_res" format="reference"/>
+    </declare-styleable>
+</resources>

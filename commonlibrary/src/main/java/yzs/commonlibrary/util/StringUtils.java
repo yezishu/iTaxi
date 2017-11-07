@@ -29,6 +29,19 @@ public class StringUtils {
     }
 
     /**
+     * @param keys 判断参数组合是否为空
+     * @return
+     */
+    public static boolean isEmpty(String... keys) {
+        for (String key : keys) {
+            if (isEmpty(key)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
      * 字符串是否为空（包括Null字符串）
      *
      * @param str
@@ -384,6 +397,19 @@ public class StringUtils {
             return true;
         }
         return false;
+    }
+
+    /**
+     * 1.非空 2.长度11位 3.以1开头
+     * @param phoneNum 手机号码
+     * @return  校验手机号码是否合法
+     */
+    public static boolean isLegalPhoneNum(String phoneNum) {
+        if (isEmpty(phoneNum)
+                || phoneNum.length() != 11
+                || !phoneNum.startsWith("1"))
+            return false;
+        return true;
     }
 
 }
