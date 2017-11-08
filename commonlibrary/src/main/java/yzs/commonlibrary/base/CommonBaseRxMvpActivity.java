@@ -1,5 +1,6 @@
 package yzs.commonlibrary.base;
 
+import yzs.commonlibrary.presenter.base.BasePresenter;
 import yzs.commonlibrary.util.StringUtils;
 import yzs.commonlibrary.util.ToastUtil;
 

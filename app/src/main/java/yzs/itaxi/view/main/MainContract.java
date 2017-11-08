@@ -1,6 +1,6 @@
 package yzs.itaxi.view.main;
 
-import yzs.commonlibrary.base.BasePresenter;
+import yzs.commonlibrary.presenter.base.BasePresenter;
 import yzs.commonlibrary.base.BaseView;
 import yzs.itaxi.data.module.NewsResponse;
 

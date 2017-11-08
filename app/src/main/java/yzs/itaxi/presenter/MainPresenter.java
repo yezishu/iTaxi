@@ -2,7 +2,7 @@ package yzs.itaxi.presenter;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
-import yzs.commonlibrary.base.BaseRxPresenter;
+import yzs.commonlibrary.presenter.base.BaseRxPresenter;
 import yzs.commonlibrary.base.constant.URLs;
 import yzs.commonlibrary.data.net.NetWorkSubscriber;
 import yzs.commonlibrary.data.net.RetrofitUtils;

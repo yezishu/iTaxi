@@ -1,10 +1,11 @@
-package yzs.commonlibrary.base;
+package yzs.commonlibrary.presenter.base;
 
 import io.reactivex.Flowable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
+import yzs.commonlibrary.base.BaseView;
 import yzs.commonlibrary.data.net.NetWorkSubscriber;
 
 /**

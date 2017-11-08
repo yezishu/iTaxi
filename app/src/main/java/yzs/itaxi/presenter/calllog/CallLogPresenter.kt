@@ -4,7 +4,7 @@ package yzs.itaxi.presenter.calllog
 import android.app.Activity
 import android.content.Context
 import android.provider.CallLog
-import yzs.commonlibrary.base.BaseRxPresenter
+import yzs.commonlibrary.presenter.base.BaseRxPresenter
 import yzs.commonlibrary.thridparty.rxpermission.PhonePermissionUtil
 import yzs.commonlibrary.util.dateutil.DateUtil
 import yzs.commonlibrary.util.StringUtils

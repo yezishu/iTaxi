@@ -3,7 +3,7 @@ package yzs.itaxi.base;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 
-import yzs.commonlibrary.base.BaseRxPresenter;
+import yzs.commonlibrary.presenter.base.BaseRxPresenter;
 import yzs.commonlibrary.base.CommonBaseRxMvpActivity;
 
 /**

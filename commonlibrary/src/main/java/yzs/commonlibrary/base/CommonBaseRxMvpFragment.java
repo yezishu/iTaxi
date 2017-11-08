@@ -1,5 +1,7 @@
 package yzs.commonlibrary.base;
 
+import yzs.commonlibrary.presenter.base.BasePresenter;
+
 /**
  * Des：
  * create by Zishu.Ye on 2017/5/31  11:57

@@ -10,6 +10,7 @@
         <activity android:name=".TestActivity"/>
         <activity android:name=".view.user.LoginActivity" android:screenOrientation="portrait"/>
         <activity android:name=".view.user.RegisterActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".view.user.AuthenticationActivity" android:screenOrientation="portrait"/>
 
     </application>
 

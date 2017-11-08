@@ -1,7 +1,7 @@
 package yzs.itaxi.view.icall;
 
 
-import yzs.commonlibrary.base.BaseRxPresenter;
+import yzs.commonlibrary.presenter.base.BaseRxPresenter;
 
 /**
  * Des：拦截来电界面

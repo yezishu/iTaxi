@@ -84,6 +84,8 @@ dependencies {
     compile "com.tbruyelle.rxpermissions2:rxpermissions:${RXPERMISSION_VERSION}"
     // material date time picker 时间日期 https://github.com/wdullaer/MaterialDateTimePicker
     compile "com.wdullaer:materialdatetimepicker:${DTP_VERSION}"
+    // 本地多图选择
+    compile 'com.lzy.widget:imagepicker:0.5.5'
 }
 repositories {
     mavenCentral()

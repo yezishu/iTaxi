@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package yzs.commonlibrary.base;
+package yzs.commonlibrary.presenter.base;
 
 /**
  * google mvp 框架

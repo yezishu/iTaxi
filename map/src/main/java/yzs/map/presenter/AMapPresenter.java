@@ -1,7 +1,7 @@
 package yzs.map.presenter;
 
 
-import yzs.commonlibrary.base.BaseRxPresenter;
+import yzs.commonlibrary.presenter.base.BaseRxPresenter;
 import yzs.map.view.amap.IAMapView;
 
 /**

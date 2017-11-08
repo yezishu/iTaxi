@@ -1,6 +1,6 @@
 package yzs.itaxi.base;
 
-import yzs.commonlibrary.base.BaseRxPresenter;
+import yzs.commonlibrary.presenter.base.BaseRxPresenter;
 import yzs.commonlibrary.base.CommonBaseRxMvpFragment;
 
 /**

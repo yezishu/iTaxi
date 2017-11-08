@@ -62,6 +62,7 @@ class LoginActivity : CommonBaseRxMvpActivity<LoginPresenter>(), ILoginView, Vie
 
     override fun showFailInfo(errorInfo: String) {
         ToastUtil.showMessage(errorInfo)
+        ARouter.getInstance().build("/commonlibrary/user/AuthenticationActivity").navigation()
     }
 
     override fun onClick(v: View) {

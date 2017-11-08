@@ -1,6 +1,6 @@
 package yzs.commonlibrary.presenter.user;
 
-import yzs.commonlibrary.base.BaseRxPresenter;
+import yzs.commonlibrary.presenter.base.BaseRxPresenter;
 import yzs.commonlibrary.base.config.App;
 import yzs.commonlibrary.base.config.AppConfig;
 import yzs.commonlibrary.base.config.TokenConfig;

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c_bg_f2gray"
+    android:orientation="vertical">
+
+    <include layout="@layout/common_title"/>
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/c_bg_white"
+        android:orientation="vertical">
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="90px"
+            android:background="@color/c_bg_white"
+            android:orientation="horizontal"
+            android:paddingLeft="32px"
+            android:paddingRight="32px">
+
+            <TextView
+                android:layout_width="150px"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="真实姓名"
+                android:textColor="@color/c_text_99gray"
+                android:textSize="28px"/>
+
+            <EditText
+                android:id="@+id/name_tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="请输入真实姓名"
+                android:maxLength="10"
+                android:textColor="@color/black"
+                android:textColorHint="@color/c_text_99gray"
+                android:textSize="28px"/>
+
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <View
+            style="@style/c_line_horizontal"
+            android:layout_marginLeft="30px"/>
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="90px"
+            android:background="@color/c_bg_white"
+            android:orientation="horizontal"
+            android:paddingLeft="32px"
+            android:paddingRight="32px">
+
+            <TextView
+                android:layout_width="150px"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="身份证号"
+                android:textColor="@color/c_text_99gray"
+                android:textSize="28px"/>
+
+            <EditText
+                android:id="@+id/idcard_tv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:digits="1234567890xX"
+                android:gravity="center_vertical"
+                android:hint="请输入身份证号"
+                android:maxLength="20"
+                android:textColor="@color/black"
+                android:textColorHint="@color/c_text_99gray"
+                android:textSize="28px"/>
+
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <View style="@style/c_line_horizontal"/>
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <View
+        style="@style/c_line_horizontal"
+        android:layout_marginTop="20px"/>
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/c_bg_white"
+        android:orientation="vertical"
+        android:paddingBottom="40px">
+
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40px"
+            android:paddingLeft="30px"
+            android:text="上传身份证照正反面"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18px"
+            android:paddingLeft="30px"
+            android:text="请确保照片中的身份证信息清晰可见"
+            android:textColor="@color/c_text_99gray"/>
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30px"
+            android:layout_marginRight="30px"
+            android:layout_marginTop="30px"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_idcard_positive"
+                android:layout_width="324px"
+                android:layout_height="240px"
+                android:layout_marginRight="20px"
+                android:layout_weight="1"
+                android:padding="6px"
+                android:scaleType="centerCrop"
+                android:src="@drawable/idcard_positive"/>
+
+            <ImageView
+                android:id="@+id/iv_idcard_negative"
+                android:layout_width="324px"
+                android:layout_height="240px"
+                android:layout_marginLeft="20px"
+                android:layout_weight="1"
+                android:padding="6px"
+                android:scaleType="centerCrop"
+                android:src="@drawable/idcard_negative"/>
+        </com.zhy.autolayout.AutoLinearLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <TextView
+        android:id="@+id/submit_tv"
+        android:layout_width="match_parent"
+        android:layout_height="90px"
+        android:layout_marginLeft="32px"
+        android:layout_marginRight="32px"
+        android:layout_marginTop="60px"
+        android:background="@drawable/blue_white_bg_selector"
+        android:gravity="center"
+        android:text="确 定"
+        android:textColor="@color/colorPrimary"
+        android:textSize="34px"/>
+</com.zhy.autolayout.AutoLinearLayout>

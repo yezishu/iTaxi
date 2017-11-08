@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!-- 边框色 -->
+    <stroke android:width="0.5dip" android:color="@color/colorPrimary" />
+
+    <!-- 背景色 -->
+    <solid android:color="@color/c_bg_white" />
+
+    <!-- 内边框 -->
+    <padding android:left="2dp" android:top="2dp" android:right="2dp" android:bottom="2dp"/>
+
+</shape>
