@@ -1,8 +1,12 @@
 package yzs.commonlibrary.data.service;
 
 import io.reactivex.Flowable;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
+import yzs.commonlibrary.base.constant.Net;
 import yzs.commonlibrary.data.model.UploadImgModel;
 import yzs.commonlibrary.data.net.HttpResult;
 
@@ -18,7 +22,9 @@ public interface IUploadFileService {
     /**
      * 获取问题状态
      */
-    @POST("loadImage")
-    Flowable<HttpResult<UploadImgModel>> uploadImgByBase64(@Query("filedata") String filedata,
+    @Headers(Net.HEAD_FORM)
+    @FormUrlEncoded
+    @POST("/team/up")
+    Flowable<HttpResult<UploadImgModel>> uploadImgByBase64(@Field("filedata") String filedata,
                                                            @Query("driverid") String driverid );
 }

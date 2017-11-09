@@ -6,10 +6,15 @@ package yzs.commonlibrary.base.constant;
  */
 public class Net {
 
-    public static final String URL_HOST = "http://localhost:8080/ECar/";
+//    public static final String URL_HOST = "http://localhost:8080/ECar/";
+    public static final String URL_HOST = "http://172.16.33.195:8082";
 
     public static final String mParameter = "parameter";
     public static final String mToken = "token";
+    /**
+     * http表单请求的form头
+     */
+    public static final String HEAD_FORM = "Content-Type: application/x-www-form-urlencoded; charset=UTF-8";
 
     /**
      * 状态码

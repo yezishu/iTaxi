@@ -1,5 +1,7 @@
 package yzs.commonlibrary.presenter.user;
 
+import org.reactivestreams.Publisher;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +27,16 @@ public class AuthenticationPresenter extends UploadFilePresenter<IAuthentication
 
     public void upLoad(List<String> url) {
         final List<String> imgUrl = new ArrayList<>();
-        addDisposable(Flowable.fromIterable(url)
+        url.add("33");
+        url.add("332");
+        url.add("3312");
+        addDisposable(Flowable.just(url)
+                .flatMap(new Function<List<String>, Publisher<String>>() {
+                    @Override
+                    public Publisher<String> apply(List<String> strings) throws Exception {
+                        return Flowable.fromIterable(strings);
+                    }
+                })
                 .flatMap(new Function<String, Flowable<UploadImgModel>>() {
                     @Override
                     public Flowable<UploadImgModel> apply(String s) throws Exception {
@@ -39,7 +50,7 @@ public class AuthenticationPresenter extends UploadFilePresenter<IAuthentication
                 .subscribeWith(new ResourceSubscriber<UploadImgModel>() {
                     @Override
                     public void onNext(UploadImgModel o) {
-                        imgUrl.addAll(o.getFileids());
+//                        imgUrl.addAll(o.getFileids());
                     }
 
                     @Override

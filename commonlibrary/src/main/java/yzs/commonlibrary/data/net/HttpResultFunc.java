@@ -20,7 +20,7 @@ public class HttpResultFunc<T> implements Function<HttpResult<T>, T> {
     @Override
     public T apply(@NonNull HttpResult<T> httpResult) throws Exception {
         if (!httpResult.getCode().equals(RESPONSE_SUCCESS_CODE)) {
-            throw new ApiException(getApiExceptionMessage(httpResult.getCode(), httpResult.getMessage()),httpResult.getCode());
+//            throw new ApiException(getApiExceptionMessage(httpResult.getCode(), httpResult.getMessage()),httpResult.getCode());
         }
         return httpResult.getData();
 
