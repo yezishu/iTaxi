@@ -15,11 +15,19 @@ public interface IUserService {
     String COMMOM_URL = "/service/driver";
 
     /**
-     * 获取问题状态
+     * 注册登录
      */
     @POST("register")
     Flowable<HttpResult<RegisterModel>> register(@Query("telno") String token,
                                                  @Query("tjno") String tjno,
                                                  @Query("pwd") String pwd);
+
+
+    /**
+     * 获取问题状态
+     */
+    @POST("identification")
+    Flowable<HttpResult<RegisterModel>> identification(@Query("telno") String token,
+                                                 @Query("tjno") String tjno );
 
 }

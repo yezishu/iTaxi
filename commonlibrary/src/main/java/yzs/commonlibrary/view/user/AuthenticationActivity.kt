@@ -50,7 +50,7 @@ class AuthenticationActivity : CommonBaseRxMvpActivity<AuthenticationPresenter>(
     }
 
     override fun initPresenter() {
-        mPresenter=AuthenticationPresenter(this)
+        mPresenter = AuthenticationPresenter(this)
     }
 
     override fun onClick(v: View) {
@@ -65,15 +65,38 @@ class AuthenticationActivity : CommonBaseRxMvpActivity<AuthenticationPresenter>(
     }
 
     private fun commit() {
+        var nameStr = tv_name.text.toString().trim()
+        var jszStr = tv_jsz.text.toString().trim()
+        var cphStr = tv_cph.text.toString().trim()
+        var xszStr = tv_xsz.text.toString().trim()
+
+        if (isUnLegal(nameStr, jszStr, cphStr, xszStr)) {
+            ToastUtil.showMessage("请正确填写信息")
+            return
+        }
+
         if (file == null
                 || file1 == null) {
             ToastUtil.showMessage("请选择上传的图片")
             return
         }
-        var imgs =ArrayList<String>()
+        var imgs = ArrayList<String>()
         imgs.add(file!!.path)
         imgs.add(file1!!.path)
-        mPresenter.upLoad(imgs)
+        var par = HashMap<String, String>()
+        par.put("xm",nameStr)
+        par.put("cph",cphStr)
+        par.put("xszhm",xszStr)
+        par.put("jszhm",jszStr)
+        mPresenter.upLoad(imgs,par)
+
+    }
+
+    private fun isUnLegal(nameStr: String, jszStr: String, cphStr: String, xszStr: String): Boolean {
+        if (StringUtils.isEmpty(nameStr, jszStr, cphStr, xszStr)) {
+            return true
+        }
+        return false
     }
 
     private fun choosePhoto(type: Int) {

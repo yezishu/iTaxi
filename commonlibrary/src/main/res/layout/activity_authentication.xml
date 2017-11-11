@@ -31,7 +31,7 @@
                 android:textSize="28px"/>
 
             <EditText
-                android:id="@+id/name_tv"
+                android:id="@+id/tv_name"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@null"
@@ -73,6 +73,100 @@
                 android:gravity="center_vertical"
                 android:hint="请输入身份证号"
                 android:maxLength="20"
+                android:textColor="@color/black"
+                android:textColorHint="@color/c_text_99gray"
+                android:textSize="28px"/>
+
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <View style="@style/c_line_horizontal"/>
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="90px"
+            android:background="@color/c_bg_white"
+            android:orientation="horizontal"
+            android:paddingLeft="32px"
+            android:paddingRight="32px">
+
+            <TextView
+                android:layout_width="150px"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="驾驶证号"
+                android:textColor="@color/c_text_99gray"
+                android:textSize="28px"/>
+
+            <EditText
+                android:id="@+id/tv_jsz"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="请输入驾驶证号"
+                android:textColor="@color/black"
+                android:textColorHint="@color/c_text_99gray"
+                android:textSize="28px"/>
+
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <View style="@style/c_line_horizontal"/>
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="90px"
+            android:background="@color/c_bg_white"
+            android:orientation="horizontal"
+            android:paddingLeft="32px"
+            android:paddingRight="32px">
+
+            <TextView
+                android:layout_width="150px"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="车牌号"
+                android:textColor="@color/c_text_99gray"
+                android:textSize="28px"/>
+
+            <EditText
+                android:id="@+id/tv_cph"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="请输入车牌号"
+                android:maxLength="20"
+                android:textColor="@color/black"
+                android:textColorHint="@color/c_text_99gray"
+                android:textSize="28px"/>
+
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <View style="@style/c_line_horizontal"/>
+
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="90px"
+            android:background="@color/c_bg_white"
+            android:orientation="horizontal"
+            android:paddingLeft="32px"
+            android:paddingRight="32px">
+
+            <TextView
+                android:layout_width="150px"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="行驶证号"
+                android:textColor="@color/c_text_99gray"
+                android:textSize="28px"/>
+
+            <EditText
+                android:id="@+id/tv_xsz"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="请输入行驶证号"
                 android:textColor="@color/black"
                 android:textColorHint="@color/c_text_99gray"
                 android:textSize="28px"/>
