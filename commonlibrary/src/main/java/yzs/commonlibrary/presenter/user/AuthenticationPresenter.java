@@ -27,42 +27,43 @@ public class AuthenticationPresenter extends UploadFilePresenter<IAuthentication
 
     public void upLoad(List<String> url) {
         final List<String> imgUrl = new ArrayList<>();
-        url.add("33");
-        url.add("332");
-        url.add("3312");
-        addDisposable(Flowable.just(url)
-                .flatMap(new Function<List<String>, Publisher<String>>() {
+        String[] strings=new String[10];
+        url.toArray(strings);
+        addDisposable(Flowable.fromArray(strings)
+                .map(new Function<String, Flowable<UploadImgModel>>() {
                     @Override
-                    public Publisher<String> apply(List<String> strings) throws Exception {
-                        return Flowable.fromIterable(strings);
-                    }
-                })
-                .flatMap(new Function<String, Flowable<UploadImgModel>>() {
-                    @Override
-                    public Flowable<UploadImgModel> apply(String s) throws Exception {
+                    public Flowable<UploadImgModel> apply(@io.reactivex.annotations.NonNull String s) throws Exception {
                         return upLoadImgByBase64(s)
                                 .map(new HttpResultFunc<UploadImgModel>());
+                    }
+                })
+                .flatMap(new Function<Flowable<UploadImgModel>, Publisher<UploadImgModel>>() {
+                    @Override
+                    public Publisher<UploadImgModel> apply(@io.reactivex.annotations.NonNull Flowable<UploadImgModel> uploadImgModelFlowable) throws Exception {
+                        return uploadImgModelFlowable;
                     }
                 })
                 .subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribeWith(new ResourceSubscriber<UploadImgModel>() {
-                    @Override
-                    public void onNext(UploadImgModel o) {
-//                        imgUrl.addAll(o.getFileids());
-                    }
+                .subscribeWith(new ResourceSubscriber<UploadImgModel>(){
+                            @Override
+                            public void onNext(UploadImgModel uploadImgModel) {
+//                                ToastUtil.showMessage();
+                            }
 
-                    @Override
-                    public void onError(Throwable t) {
-                        imgUrl.add("1");
-                    }
+                            @Override
+                            public void onError(Throwable t) {
 
-                    @Override
-                    public void onComplete() {
+                            }
 
-                    }
-                }));
+                            @Override
+                            public void onComplete() {
+
+                            }
+                        }));
+
+
     }
 
 }
