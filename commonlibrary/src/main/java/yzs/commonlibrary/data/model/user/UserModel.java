@@ -4,7 +4,7 @@ package yzs.commonlibrary.data.model.user;
  * Des：用户信息
  * creat by Zishu.Ye on 2017/11/11  11:25
  */
-public class InfoModel {
+public class UserModel {
 
 
     /**

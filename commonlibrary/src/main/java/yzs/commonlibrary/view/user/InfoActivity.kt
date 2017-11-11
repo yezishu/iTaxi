@@ -1,16 +1,18 @@
 package yzs.commonlibrary.view.user
 
 import android.os.Bundle
+import com.alibaba.android.arouter.facade.annotation.Route
 import kotlinx.android.synthetic.main.activity_user_info.*
 import yzs.commonlibrary.R
 import yzs.commonlibrary.base.CommonBaseRxMvpActivity
-import yzs.commonlibrary.data.model.user.InfoModel
+import yzs.commonlibrary.data.model.user.UserModel
 import yzs.commonlibrary.presenter.user.InfoPresenter
 
 /**
  * Des：用户信息界面
  * creat by Zishu.Ye on 2017/11/11  11:23
  */
+@Route(path = "/commonlibrary/user/InfoActivity")
 class InfoActivity : CommonBaseRxMvpActivity<InfoPresenter>(), IInfoView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,7 +37,7 @@ class InfoActivity : CommonBaseRxMvpActivity<InfoPresenter>(), IInfoView {
 
     }
 
-    override fun showInfo(infoModel: InfoModel) {
+    override fun showInfo(infoModel: UserModel) {
         tv_name.text = infoModel!!.xm
         tv_tel.text = infoModel!!.telno
         tv_cph.text = infoModel!!.cph

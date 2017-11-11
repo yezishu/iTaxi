@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <corners
+        android:bottomLeftRadius="40px"
+        android:topLeftRadius="0px"
+        android:bottomRightRadius="40px"
+        android:topRightRadius="0px"/>
+    <!-- 边框色 -->
+    <stroke
+        android:width="1dp"
+        android:color="@color/c_bg_f2gray" />
+
+    <!-- 背景色 -->
+    <solid android:color="@color/c_bg_f2gray" />
+
+</shape>

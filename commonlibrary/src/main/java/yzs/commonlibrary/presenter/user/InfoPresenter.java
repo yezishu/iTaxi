@@ -1,7 +1,9 @@
 package yzs.commonlibrary.presenter.user;
 
+import yzs.commonlibrary.base.config.AppConfig;
 import yzs.commonlibrary.base.constant.Net;
-import yzs.commonlibrary.data.model.user.InfoModel;
+import yzs.commonlibrary.base.constant.SConstant;
+import yzs.commonlibrary.data.model.user.UserModel;
 import yzs.commonlibrary.data.net.HttpResultFunc;
 import yzs.commonlibrary.data.net.NetWorkSubscriber;
 import yzs.commonlibrary.data.net.RetrofitUtils;
@@ -26,17 +28,21 @@ public class InfoPresenter extends BaseRxPresenter<IInfoView> {
     }
 
     public void getInfo() {
+        if(AppConfig.IS_NO_SERVER){
+            mView.showInfo(SConstant.getUser());
+            return;
+        }
         addDisposable(
                 iUserService.info("", "")
-                        .map(new HttpResultFunc<InfoModel>()),
-                new NetWorkSubscriber<InfoModel>() {
+                        .map(new HttpResultFunc<UserModel>()),
+                new NetWorkSubscriber<UserModel>() {
                     @Override
                     public void showErrorInfo(String errorInfo) {
                         mView.showFailInfo(errorInfo);
                     }
 
                     @Override
-                    public void showNetResult(InfoModel infoModel) {
+                    public void showNetResult(UserModel infoModel) {
                         mView.showInfo(infoModel);
                     }
                 });

@@ -1,18 +1,13 @@
 package yzs.commonlibrary.presenter.user;
 
-import yzs.commonlibrary.presenter.base.BaseRxPresenter;
-import yzs.commonlibrary.base.config.App;
-import yzs.commonlibrary.base.config.AppConfig;
 import yzs.commonlibrary.base.config.TokenConfig;
 import yzs.commonlibrary.base.constant.Net;
-import yzs.commonlibrary.base.constant.SType;
 import yzs.commonlibrary.data.model.user.RegisterModel;
 import yzs.commonlibrary.data.net.HttpResultFunc;
 import yzs.commonlibrary.data.net.NetWorkSubscriber;
 import yzs.commonlibrary.data.net.RetrofitUtils;
 import yzs.commonlibrary.data.service.IUserService;
-import yzs.commonlibrary.util.AppSPUtils;
-import yzs.commonlibrary.util.SPUtils;
+import yzs.commonlibrary.presenter.base.BaseRxPresenter;
 import yzs.commonlibrary.view.user.IUserView;
 
 /**
@@ -30,12 +25,7 @@ public class UserPresenter<V extends IUserView> extends BaseRxPresenter<V> {
                 .create(IUserService.class);
     }
 
-    /**
-     * @param userName 缓存登录记录
-     */
-    public void dataLogon( String userName) {
-        SPUtils.put(App.INSTANCE, SType.LOGIN_USERNAME, userName, userName);
-    }
+
 
     /**
      * 登录注册接口
@@ -53,9 +43,7 @@ public class UserPresenter<V extends IUserView> extends BaseRxPresenter<V> {
                     @Override
                     public void showNetResult(RegisterModel registerModel) {
                         TokenConfig.saveToken(registerModel.getToken());
-                        AppSPUtils.putSpConfigValue(AppConfig.SP_USER_ID, registerModel.getTarget().getDriverid());
-                        AppSPUtils.putSpConfigValue(AppConfig.SP_KEY_USER_TELEPHONE, registerModel.getTarget().getTelno());
-                        dataLogon(registerModel.getTarget().getTelno());
+//                        SConstant.setUser();
                     }
                 });
     }

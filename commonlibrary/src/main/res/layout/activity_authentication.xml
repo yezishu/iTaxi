@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.zhy.autolayout.AutoLinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/c_bg_f2gray"
     android:orientation="vertical">
 
-    <include layout="@layout/common_title"/>
+    <yzs.commonlibrary.widget.TitleView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/c_title_height"
+        app:tv_back_view="true"
+        app:tv_title="认证"/>
 
     <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
@@ -19,13 +24,13 @@
 
             <TextView
                 style="@style/c_ListFormsLabelStyle"
-                android:text="真实姓名" />
+                android:text="真实姓名"/>
 
             <EditText
                 android:id="@+id/ev_name"
+                style="@style/c_ListFormsTextStyle"
                 android:hint="请输入真实姓名"
-                android:maxLength="10"
-                style="@style/c_ListFormsTextStyle"/>
+                android:maxLength="10"/>
 
         </com.zhy.autolayout.AutoLinearLayout>
 
@@ -38,13 +43,13 @@
 
             <TextView
                 style="@style/c_ListFormsLabelStyle"
-                android:text="身份证号" />
+                android:text="身份证号"/>
 
             <EditText
                 android:id="@+id/idcard_tv"
+                style="@style/c_ListFormsTextStyle"
                 android:hint="请输入身份证号"
-                android:maxLength="20"
-                style="@style/c_ListFormsTextStyle"/>
+                android:maxLength="20"/>
 
         </com.zhy.autolayout.AutoLinearLayout>
 
@@ -55,28 +60,12 @@
 
             <TextView
                 style="@style/c_ListFormsLabelStyle"
-                android:text="驾驶证号" />
+                android:text="驾驶证号"/>
 
             <EditText
                 android:id="@+id/ev_jsz"
-                android:hint="请输入驾驶证号"
-                style="@style/c_ListFormsTextStyle"/>
-
-        </com.zhy.autolayout.AutoLinearLayout>
-
-        <View style="@style/c_line_horizontal"/>
-
-        <com.zhy.autolayout.AutoLinearLayout
-            style="@style/c_ListFormsViewStyle">
-
-            <TextView
-                android:text="车牌号"
-                style="@style/c_ListFormsLabelStyle"/>
-
-            <EditText
-                android:id="@+id/ev_cph"
-                android:hint="请输入车牌号"
-                style="@style/c_ListFormsTextStyle"/>
+                style="@style/c_ListFormsTextStyle"
+                android:hint="请输入驾驶证号"/>
 
         </com.zhy.autolayout.AutoLinearLayout>
 
@@ -87,12 +76,28 @@
 
             <TextView
                 style="@style/c_ListFormsLabelStyle"
-                android:text="行驶证号" />
+                android:text="车牌号"/>
+
+            <EditText
+                android:id="@+id/ev_cph"
+                style="@style/c_ListFormsTextStyle"
+                android:hint="请输入车牌号"/>
+
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <View style="@style/c_line_horizontal"/>
+
+        <com.zhy.autolayout.AutoLinearLayout
+            style="@style/c_ListFormsViewStyle">
+
+            <TextView
+                style="@style/c_ListFormsLabelStyle"
+                android:text="行驶证号"/>
 
             <EditText
                 android:id="@+id/ev_xsz"
                 style="@style/c_ListFormsTextStyle"
-                android:hint="请输入行驶证号" />
+                android:hint="请输入行驶证号"/>
 
         </com.zhy.autolayout.AutoLinearLayout>
 
