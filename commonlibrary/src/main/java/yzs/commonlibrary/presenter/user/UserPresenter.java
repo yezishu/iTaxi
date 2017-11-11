@@ -6,7 +6,7 @@ import yzs.commonlibrary.base.config.AppConfig;
 import yzs.commonlibrary.base.config.TokenConfig;
 import yzs.commonlibrary.base.constant.Net;
 import yzs.commonlibrary.base.constant.SType;
-import yzs.commonlibrary.data.model.RegisterModel;
+import yzs.commonlibrary.data.model.user.RegisterModel;
 import yzs.commonlibrary.data.net.HttpResultFunc;
 import yzs.commonlibrary.data.net.NetWorkSubscriber;
 import yzs.commonlibrary.data.net.RetrofitUtils;

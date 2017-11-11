@@ -12,7 +12,7 @@ import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 import io.reactivex.subscribers.ResourceSubscriber;
 import yzs.commonlibrary.base.constant.Net;
-import yzs.commonlibrary.data.model.RegisterModel;
+import yzs.commonlibrary.data.model.user.RegisterModel;
 import yzs.commonlibrary.data.model.UploadImgModel;
 import yzs.commonlibrary.data.net.HttpResultFunc;
 import yzs.commonlibrary.data.net.NetWorkSubscriber;

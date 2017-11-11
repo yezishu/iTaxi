@@ -3,7 +3,8 @@ package yzs.commonlibrary.data.service;
 import io.reactivex.Flowable;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
-import yzs.commonlibrary.data.model.RegisterModel;
+import yzs.commonlibrary.data.model.user.InfoModel;
+import yzs.commonlibrary.data.model.user.RegisterModel;
 import yzs.commonlibrary.data.net.HttpResult;
 
 /**
@@ -17,17 +18,25 @@ public interface IUserService {
     /**
      * 注册登录
      */
-    @POST("register")
+    @POST(COMMOM_URL + "register")
     Flowable<HttpResult<RegisterModel>> register(@Query("telno") String token,
                                                  @Query("tjno") String tjno,
                                                  @Query("pwd") String pwd);
 
 
     /**
-     * 获取问题状态
+     * 资质认证
      */
-    @POST("identification")
+    @POST(COMMOM_URL + "identification")
     Flowable<HttpResult<RegisterModel>> identification(@Query("telno") String token,
-                                                 @Query("tjno") String tjno );
+                                                       @Query("tjno") String tjno);
+
+    /**
+     * 用户个人信息
+     */
+    @POST(COMMOM_URL + "loadDetail")
+    Flowable<HttpResult<InfoModel>> info(@Query("telno") String token,
+                                         @Query("tjno") String tjno);
+
 
 }

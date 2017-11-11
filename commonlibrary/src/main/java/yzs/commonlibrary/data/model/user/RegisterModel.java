@@ -1,4 +1,4 @@
-package yzs.commonlibrary.data.model;
+package yzs.commonlibrary.data.model.user;
 
 /**
  * Des：注册model

@@ -65,10 +65,10 @@ class AuthenticationActivity : CommonBaseRxMvpActivity<AuthenticationPresenter>(
     }
 
     private fun commit() {
-        var nameStr = tv_name.text.toString().trim()
-        var jszStr = tv_jsz.text.toString().trim()
-        var cphStr = tv_cph.text.toString().trim()
-        var xszStr = tv_xsz.text.toString().trim()
+        var nameStr = ev_name.text.toString().trim()
+        var jszStr = ev_jsz.text.toString().trim()
+        var cphStr = ev_cph.text.toString().trim()
+        var xszStr = ev_xsz.text.toString().trim()
 
         if (isUnLegal(nameStr, jszStr, cphStr, xszStr)) {
             ToastUtil.showMessage("请正确填写信息")
