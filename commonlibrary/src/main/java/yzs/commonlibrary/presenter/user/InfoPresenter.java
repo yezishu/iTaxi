@@ -33,7 +33,7 @@ public class InfoPresenter extends BaseRxPresenter<IInfoView> {
             return;
         }
         addDisposable(
-                iUserService.info("", "")
+                iUserService.info("")
                         .map(new HttpResultFunc<UserModel>()),
                 new NetWorkSubscriber<UserModel>() {
                     @Override

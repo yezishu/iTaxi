@@ -3,12 +3,16 @@ package yzs.commonlibrary.presenter.user
 import android.app.Activity
 import android.content.Context
 import com.alibaba.android.arouter.launcher.ARouter
-
 import yzs.commonlibrary.base.config.AppConfig
 import yzs.commonlibrary.base.config.TokenConfig
+import yzs.commonlibrary.base.constant.Net
 import yzs.commonlibrary.base.constant.SConstant
+import yzs.commonlibrary.data.model.user.RegisterModel
 import yzs.commonlibrary.data.model.user.UserModel
+import yzs.commonlibrary.data.net.HttpResultFunc
+import yzs.commonlibrary.data.net.NetWorkSubscriber
 import yzs.commonlibrary.view.user.ILoginView
+import java.util.*
 
 /**
  * Des：登录presenter
@@ -16,13 +20,31 @@ import yzs.commonlibrary.view.user.ILoginView
  */
 class LoginPresenter(view: ILoginView) : UserPresenter<ILoginView>(view) {
 
+
     fun login(context: Context, userName: String, passWord: String) {
         if (AppConfig.IS_NO_SERVER) {
             testData()
             ARouter.getInstance().build("/app/main/MainActivity").navigation()
             (context as Activity).finish()
         }
-        register(userName, passWord, "")
+
+        val par = HashMap<String, Any>()
+        par.put("telno", userName)
+        par.put("pwd", passWord)
+        addDisposable(
+                iUserService.login(Net.getRequestJson(par))
+                        .map(HttpResultFunc<RegisterModel>()),
+                object : NetWorkSubscriber<RegisterModel>() {
+                    override fun showErrorInfo(errorInfo: String) {
+                        mView.showFailInfo(errorInfo)
+                    }
+
+                    override fun showNetResult(registerModel: RegisterModel) {
+                        TokenConfig.saveToken("test_token")
+                        SConstant.setUser(registerModel)
+                        mView.showRegister("登录成功")
+                    }
+                })
     }
 
     /**

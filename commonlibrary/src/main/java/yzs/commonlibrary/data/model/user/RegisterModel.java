@@ -4,23 +4,15 @@ package yzs.commonlibrary.data.model.user;
  * Des：注册model
  * create by Zishu.Ye on 2017/11/7  20:06
  */
-public class RegisterModel {
+public class RegisterModel extends UserModel{
 
     /**
-     * target : {"telno":null,"driverid":"402881e45f8c74ee015f8c75846d0000"}
-     * token : b36249ec698e4c67b400721494534f7a
+     * token : null
+     * telno : null
+     * driverid : 402881e65faf4d2c015faf5809020009
      */
 
-    private TargetBean target;
     private String token;
-
-    public TargetBean getTarget() {
-        return target;
-    }
-
-    public void setTarget(TargetBean target) {
-        this.target = target;
-    }
 
     public String getToken() {
         return token;
@@ -30,29 +22,4 @@ public class RegisterModel {
         this.token = token;
     }
 
-    public static class TargetBean {
-        /**
-         * telno : null
-         * driverid : 402881e45f8c74ee015f8c75846d0000
-         */
-
-        private String telno;
-        private String driverid;
-
-        public String getTelno() {
-            return telno;
-        }
-
-        public void setTelno(String telno) {
-            this.telno = telno;
-        }
-
-        public String getDriverid() {
-            return driverid;
-        }
-
-        public void setDriverid(String driverid) {
-            this.driverid = driverid;
-        }
-    }
 }

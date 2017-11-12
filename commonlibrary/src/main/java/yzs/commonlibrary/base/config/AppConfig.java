@@ -6,7 +6,7 @@ package yzs.commonlibrary.base.config;
  */
 public class AppConfig {
 
-    public final static boolean IS_NO_SERVER = true;//配置是否没有服务器调试模式
+    public final static boolean IS_NO_SERVER = false;//配置是否没有服务器调试模式
 
     /**
      * 以下是SP、Lrucache存储的Key名

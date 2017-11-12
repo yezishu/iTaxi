@@ -10,6 +10,7 @@ import io.reactivex.functions.Consumer
 import kotlinx.android.synthetic.main.activity_authentication.*
 import yzs.commonlibrary.R
 import yzs.commonlibrary.base.CommonBaseRxMvpActivity
+import yzs.commonlibrary.base.constant.Net
 import yzs.commonlibrary.base.constant.SState
 import yzs.commonlibrary.presenter.user.AuthenticationPresenter
 import yzs.commonlibrary.thridparty.GlideWrapper
@@ -83,7 +84,7 @@ class AuthenticationActivity : CommonBaseRxMvpActivity<AuthenticationPresenter>(
         var imgs = ArrayList<String>()
         imgs.add(file!!.path)
         imgs.add(file1!!.path)
-        var par = HashMap<String, String>()
+        var par =Net.getRequestMap()
         par.put("xm",nameStr)
         par.put("cph",cphStr)
         par.put("xszhm",xszStr)

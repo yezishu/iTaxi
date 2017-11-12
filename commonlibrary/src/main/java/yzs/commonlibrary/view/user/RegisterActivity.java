@@ -6,7 +6,9 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 
+import org.greenrobot.eventbus.EventBus;
 import org.jetbrains.annotations.NotNull;
 
 import yzs.commonlibrary.R;
@@ -58,7 +60,7 @@ public class RegisterActivity extends CommonBaseRxMvpActivity<UserPresenter> imp
                     ToastUtil.showMessage("输入参数不合法请检查");
                     return;
                 }
-                mPresenter.register(phone,pw,tjNo);
+                mPresenter.register(phone, pw, tjNo);
             }
         });
     }
@@ -91,6 +93,9 @@ public class RegisterActivity extends CommonBaseRxMvpActivity<UserPresenter> imp
 
     @Override
     public void showRegister(@NotNull String info) {
-        ToastUtil.showMessage("注册成功");
+        ToastUtil.showMessage(info);
+        EventBus.getDefault().post(new RegisterEvent(true));
+        ARouter.getInstance().build("/app/main/MainActivity").navigation();
+        finish();
     }
 }

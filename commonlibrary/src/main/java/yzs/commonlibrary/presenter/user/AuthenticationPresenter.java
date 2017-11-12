@@ -36,7 +36,7 @@ public class AuthenticationPresenter extends UploadFilePresenter<IAuthentication
                 .create(IUserService.class);
     }
 
-    public void upLoad(List<String> url, Map<String, String> par) {
+    public void upLoad(List<String> url, final Map<String, Object> par) {
         final List<String> imgUrl = new ArrayList<>();
         String[] strings = new String[10];
         url.toArray(strings);
@@ -70,16 +70,16 @@ public class AuthenticationPresenter extends UploadFilePresenter<IAuthentication
 
                     @Override
                     public void onComplete() {
-
+                        identification(imgUrl,par);
                     }
                 }));
 
 
     }
 
-    private void identification(Map<String, String> par) {
+    private void identification(List<String> imgUrl,Map<String, Object> par) {
         addDisposable(
-                iUserService.identification("", "")
+                iUserService.identification("")
                         .map(new HttpResultFunc<RegisterModel>()),
                 new NetWorkSubscriber<RegisterModel>() {
                     @Override
